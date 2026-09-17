@@ -203,10 +203,11 @@ packages:
   phosphoricons_flutter:
     dependency: "direct main"
     description:
-      name: phosphoricons_flutter
-      sha256: "34e4a00cc1a4be87c60edfcfcd5de23c005dc69945a5d77e08d33e6d23c0e793"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "77052c4fa40ed192487babdaff69c0e979e83e9a"
+      url: "https://github.com/lucaszafret/phosphoricons_flutter"
+    source: git
     version: "1.0.0"
   plugin_platform_interface:
     dependency: transitive

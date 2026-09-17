@@ -2,6 +2,7 @@ name: neuma_kit
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
+publish_to: none
 
 environment:
   sdk: ^3.13.1
@@ -14,7 +15,9 @@ dependencies:
   gap: ^3.0.1
   liquid_glass_widgets: ^1.6.1
   lottie: ^3.5.1
-  phosphoricons_flutter: ^1.0.0
+  phosphoricons_flutter:
+    git:
+      url: https://github.com/lucaszafret/phosphoricons_flutter
   url_launcher: ^6.3.2
 
 dev_dependencies:
