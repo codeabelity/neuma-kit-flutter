@@ -79,13 +79,6 @@
       ]
     },
     {
-      "name": "liquid_glass_widgets",
-      "version": "1.6.1",
-      "dependencies": [
-        "flutter"
-      ]
-    },
-    {
       "name": "gap",
       "version": "3.0.1",
       "dependencies": [
@@ -409,6 +402,13 @@
       "name": "ffi",
       "version": "2.2.0",
       "dependencies": []
+    },
+    {
+      "name": "liquid_glass_widgets",
+      "version": "0.30.2",
+      "dependencies": [
+        "flutter"
+      ]
     }
   ],
   "configVersion": 1
