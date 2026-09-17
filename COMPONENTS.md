@@ -8,12 +8,12 @@ This document lists all components transferred from the main app to the neuma_ki
 
 | Original File | New Location | Notes |
 |--------------|--------------|-------|
-| `cater_app_bar.dart` | `src/layout/neuma_app_bar.dart` | Renamed class to `neumaAppBar` |
-| `cater_background.dart` | `src/layout/neuma_background.dart` | Renamed classes to `neumaBackground` and `neumaBackgroundV2` |
-| `cater_edge_to_edge_layout.dart` | `src/layout/neuma_edge_to_edge_layout.dart` | Renamed all classes with `neuma` prefix |
-| `cater_page_padding.dart` | `src/layout/neuma_page_padding.dart` | Renamed class to `neumaPagePadding` |
+| `cater_app_bar.dart` | `src/layout/neuma_app_bar.dart` | Renamed class to `NeumaAppBar` |
+| `cater_background.dart` | `src/layout/neuma_background.dart` | Renamed classes to `NeumaBackground` and `NeumaBackgroundV2` |
+| `cater_edge_to_edge_layout.dart` | `src/layout/neuma_edge_to_edge_layout.dart` | Renamed all classes with `Neuma` prefix |
+| `cater_page_padding.dart` | `src/layout/neuma_page_padding.dart` | Renamed class to `NeumaPagePadding` |
 | `cater_chip.dart` | `src/buttons/neuma_chip.dart` | Renamed class to `NeumaChip` |
-| `cater_loading.dart` | `src/loading/neuma_loading.dart` | Renamed class to `neumaLoading` |
+| `cater_loading.dart` | `src/loading/neuma_loading.dart` | Renamed class to `NeumaLoading` |
 | `nav_badge.dart` | `src/badges/nav_badge.dart` | No rename, kept as `NavBadge` |
 | `star_rating_input.dart` | `src/inputs/star_rating_input.dart` | No rename, kept as `StarRatingInput` |
 | `thumbnail_fallback.dart` | `src/media/thumbnail_fallback.dart` | No rename, kept as `ThumbnailFallback` |
@@ -22,8 +22,8 @@ This document lists all components transferred from the main app to the neuma_ki
 
 | Component | Location | Purpose |
 |-----------|----------|---------|
-| `neumaBadge` | `src/badges/neuma_badge.dart` | Generic badge extracted from `_TempBadge` pattern |
-| `neumaDivider` | `src/feedback/neuma_divider.dart` | Styled divider extracted from common pattern |
+| `NeumaBadge` | `src/badges/neuma_badge.dart` | Generic badge extracted from `_TempBadge` pattern |
+| `NeumaDivider` | `src/feedback/neuma_divider.dart` | Styled divider extracted from common pattern |
 | `MetaInfoRow` | `src/layout/meta_info_row.dart` | Generic info row extracted from `_MetaRow` |
 | `DotIndicator` | `src/navigation/dot_indicator.dart` | Carousel indicator extracted from announcement carousel |
 
@@ -97,5 +97,5 @@ And update class names:
 CaterAppBar(title: Text('Title'))
 
 // After
-neumaAppBar(title: Text('Title'))
+NeumaAppBar(title: Text('Title'))
 ```

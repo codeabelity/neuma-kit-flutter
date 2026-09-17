@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 
 /// A comprehensive solution for handling edge-to-edge display and system UI
 /// insets on all Android versions, with special focus on Android 15+ changes
-class neumaEdgeToEdgeLayout {
+class NeumaEdgeToEdgeLayout {
   static bool _isInitialized = false;
 
   /// Initialize edge-to-edge mode for the entire app
@@ -62,10 +62,10 @@ class neumaEdgeToEdgeLayout {
 
 /// A widget that automatically handles system UI insets and provides
 /// safe area for content while maintaining edge-to-edge appearance
-class neumaEdgeToEdgeScaffold extends StatelessWidget {
-
-  const neumaEdgeToEdgeScaffold({
-    required this.body, super.key,
+class NeumaEdgeToEdgeScaffold extends StatelessWidget {
+  const NeumaEdgeToEdgeScaffold({
+    required this.body,
+    super.key,
     this.appBar,
     this.bottomNavigationBar,
     this.floatingActionButton,
@@ -105,13 +105,13 @@ class neumaEdgeToEdgeScaffold extends StatelessWidget {
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation,
       appBar: appBar != null ? _buildAppBar(context) : null,
-      body: neumaSafeAreaWrapper(
+      body: NeumaSafeAreaWrapper(
         customPadding: customPadding,
         maintainBottomViewPadding: maintainBottomViewPadding,
         child: body,
       ),
       bottomNavigationBar: bottomNavigationBar != null
-          ? neumaSafeAreaWrapper(
+          ? NeumaSafeAreaWrapper(
               applyTop: false,
               applyLeft: false,
               applyRight: false,
@@ -122,7 +122,7 @@ class neumaEdgeToEdgeScaffold extends StatelessWidget {
   }
 
   PreferredSizeWidget _buildAppBar(BuildContext context) {
-    final statusBarHeight = neumaEdgeToEdgeLayout.getStatusBarHeight(context);
+    final statusBarHeight = NeumaEdgeToEdgeLayout.getStatusBarHeight(context);
 
     return PreferredSize(
       preferredSize: Size.fromHeight(kToolbarHeight + statusBarHeight),
@@ -135,10 +135,10 @@ class neumaEdgeToEdgeScaffold extends StatelessWidget {
 }
 
 /// A wrapper widget that applies safe area padding intelligently
-class neumaSafeAreaWrapper extends StatelessWidget {
-
-  const neumaSafeAreaWrapper({
-    required this.child, super.key,
+class NeumaSafeAreaWrapper extends StatelessWidget {
+  const NeumaSafeAreaWrapper({
+    required this.child,
+    super.key,
     this.applyTop = true,
     this.applyBottom = true,
     this.applyLeft = true,
@@ -172,10 +172,9 @@ class neumaSafeAreaWrapper extends StatelessWidget {
 }
 
 /// A custom app bar that handles edge-to-edge display properly
-class neumaEdgeToEdgeAppBar extends StatelessWidget
+class NeumaEdgeToEdgeAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-
-  const neumaEdgeToEdgeAppBar({
+  const NeumaEdgeToEdgeAppBar({
     super.key,
     this.title,
     this.titleWidget,
@@ -208,10 +207,7 @@ class neumaEdgeToEdgeAppBar extends StatelessWidget
           title:
               titleWidget ??
               (title != null
-                  ? Text(
-                      title!,
-                      style: theme.textTheme.headlineMedium,
-                    )
+                  ? Text(title!, style: theme.textTheme.headlineMedium)
                   : null),
           actions: actions,
           leading: automaticallyImplyLeading
@@ -223,8 +219,7 @@ class neumaEdgeToEdgeAppBar extends StatelessWidget
           automaticallyImplyLeading: automaticallyImplyLeading,
           backgroundColor: backgroundColor ?? theme.colorScheme.primary,
           elevation: elevation ?? 8,
-          foregroundColor:
-              foregroundColor ?? theme.colorScheme.onPrimary,
+          foregroundColor: foregroundColor ?? theme.colorScheme.onPrimary,
           centerTitle: centerTitle,
         ),
       ),
@@ -236,10 +231,10 @@ class neumaEdgeToEdgeAppBar extends StatelessWidget
 }
 
 /// A bottom navigation bar that handles edge-to-edge display
-class neumaEdgeToEdgeBottomNavigationBar extends StatelessWidget {
-
-  const neumaEdgeToEdgeBottomNavigationBar({
-    required this.items, super.key,
+class NeumaEdgeToEdgeBottomNavigationBar extends StatelessWidget {
+  const NeumaEdgeToEdgeBottomNavigationBar({
+    required this.items,
+    super.key,
     this.currentIndex = 0,
     this.onTap,
     this.backgroundColor,
@@ -285,10 +280,10 @@ class neumaEdgeToEdgeBottomNavigationBar extends StatelessWidget {
 }
 
 /// A utility widget for custom content that needs manual inset handling
-class neumaEdgeToEdgeContent extends StatelessWidget {
-
-  const neumaEdgeToEdgeContent({
-    required this.child, super.key,
+class NeumaEdgeToEdgeContent extends StatelessWidget {
+  const NeumaEdgeToEdgeContent({
+    required this.child,
+    super.key,
     this.avoidStatusBar = true,
     this.avoidNavigationBar = true,
     this.avoidKeyboard = true,
@@ -338,23 +333,23 @@ class neumaEdgeToEdgeContent extends StatelessWidget {
 }
 
 /// Extension methods for easier usage
-extension neumaEdgeToEdgeExtensions on BuildContext {
+extension NeumaEdgeToEdgeExtensions on BuildContext {
   EdgeInsets get safeAreaPadding =>
-      neumaEdgeToEdgeLayout.getSafeAreaPadding(this);
-  EdgeInsets get viewInsets => neumaEdgeToEdgeLayout.getViewInsets(this);
+      NeumaEdgeToEdgeLayout.getSafeAreaPadding(this);
+  EdgeInsets get viewInsets => NeumaEdgeToEdgeLayout.getViewInsets(this);
   bool get hasGestureNavigation =>
-      neumaEdgeToEdgeLayout.hasGestureNavigation(this);
+      NeumaEdgeToEdgeLayout.hasGestureNavigation(this);
   double get navigationBarHeight =>
-      neumaEdgeToEdgeLayout.getNavigationBarHeight(this);
-  double get statusBarHeight => neumaEdgeToEdgeLayout.getStatusBarHeight(this);
+      NeumaEdgeToEdgeLayout.getNavigationBarHeight(this);
+  double get statusBarHeight => NeumaEdgeToEdgeLayout.getStatusBarHeight(this);
 }
 
 /// Example usage and helper methods
 class EdgeToEdgeExamples {
   /// Example of a basic screen implementation
   static Widget basicScreen({required Widget content}) {
-    return neumaEdgeToEdgeScaffold(
-      appBar: const neumaEdgeToEdgeAppBar(title: 'Example Screen'),
+    return NeumaEdgeToEdgeScaffold(
+      appBar: const NeumaEdgeToEdgeAppBar(title: 'Example Screen'),
       body: content,
     );
   }
@@ -366,9 +361,9 @@ class EdgeToEdgeExamples {
     int currentIndex = 0,
     ValueChanged<int>? onNavTap,
   }) {
-    return neumaEdgeToEdgeScaffold(
+    return NeumaEdgeToEdgeScaffold(
       body: content,
-      bottomNavigationBar: neumaEdgeToEdgeBottomNavigationBar(
+      bottomNavigationBar: NeumaEdgeToEdgeBottomNavigationBar(
         items: navItems,
         currentIndex: currentIndex,
         onTap: onNavTap,
@@ -378,8 +373,8 @@ class EdgeToEdgeExamples {
 
   /// Example of a full-screen content (like video player)
   static Widget fullScreenContent({required Widget content}) {
-    return neumaEdgeToEdgeScaffold(
-      body: neumaEdgeToEdgeContent(
+    return NeumaEdgeToEdgeScaffold(
+      body: NeumaEdgeToEdgeContent(
         avoidStatusBar: false,
         avoidNavigationBar: false,
         child: content,

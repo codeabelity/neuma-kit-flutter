@@ -1,5 +1,3 @@
-library neuma_kit;
-
 // Layout
 export 'src/layout/neuma_app_bar.dart';
 export 'src/layout/neuma_background.dart';

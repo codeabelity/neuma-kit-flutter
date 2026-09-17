@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class neumaPagePadding extends StatelessWidget {
-  const neumaPagePadding({
+class NeumaPagePadding extends StatelessWidget {
+  const NeumaPagePadding({
     required this.child,
     this.isHasBottomNav = true,
     super.key,

@@ -13,16 +13,16 @@ import 'package:lottie/lottie.dart';
 /// Usage:
 /// ```dart
 /// // Themed (default)
-/// neumaLoading()
+/// NeumaLoading()
 ///
 /// // Slower playback (0.5 = half speed, 2.0 = double speed)
-/// neumaLoading(speed: 0.5)
+/// NeumaLoading(speed: 0.5)
 ///
 /// // Custom size and color
-/// neumaLoading(size: 80, color: Colors.white)
+/// NeumaLoading(size: 80, color: Colors.white)
 /// ```
-class neumaLoading extends StatefulWidget {
-  const neumaLoading({
+class NeumaLoading extends StatefulWidget {
+  const NeumaLoading({
     super.key,
     this.size = 48,
     this.color,
@@ -44,10 +44,10 @@ class neumaLoading extends StatefulWidget {
   final String assetPath;
 
   @override
-  State<neumaLoading> createState() => _neumaLoadingState();
+  State<NeumaLoading> createState() => _NeumaLoadingState();
 }
 
-class _neumaLoadingState extends State<neumaLoading>
+class _NeumaLoadingState extends State<NeumaLoading>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
@@ -103,10 +103,7 @@ class _neumaLoadingState extends State<neumaLoading>
       },
       delegates: LottieDelegates(
         values: [
-          ValueDelegate.color(
-            _circleFill,
-            value: backgroundColor,
-          ),
+          ValueDelegate.color(_circleFill, value: backgroundColor),
           ValueDelegate.color(_forkFill, value: foregroundColor),
           ValueDelegate.color(_knifeFill, value: foregroundColor),
           ValueDelegate.color(_rect1Fill, value: foregroundColor),

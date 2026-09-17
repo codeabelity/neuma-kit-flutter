@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class neumaBackground extends StatelessWidget {
-  const neumaBackground({required this.colorScheme, this.child, super.key});
+class NeumaBackground extends StatelessWidget {
+  const NeumaBackground({required this.colorScheme, this.child, super.key});
 
   final ColorScheme colorScheme;
   final Widget? child;
@@ -25,8 +25,8 @@ class neumaBackground extends StatelessWidget {
   }
 }
 
-class neumaBackgroundV2 extends StatelessWidget {
-  const neumaBackgroundV2({required this.colorScheme, this.child, super.key});
+class NeumaBackgroundV2 extends StatelessWidget {
+  const NeumaBackgroundV2({required this.colorScheme, this.child, super.key});
 
   final ColorScheme colorScheme;
   final Widget? child;
@@ -46,11 +46,7 @@ class neumaBackgroundV2 extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            topColor,
-            colorScheme.surface,
-            bottomColor,
-          ],
+          colors: [topColor, colorScheme.surface, bottomColor],
         ),
       ),
       child: child,

@@ -5,15 +5,15 @@ A reusable Flutter UI component library featuring glassmorphic designs and moder
 ## Features
 
 ### Layout Components
-- **neumaAppBar** - Glassmorphic app bar with gradient overlay
-- **neumaBackground** / **neumaBackgroundV2** - Gradient background containers
-- **neumaEdgeToEdgeLayout** - Complete edge-to-edge display solution for Android
-- **neumaPagePadding** - Consistent page padding wrapper
+- **NeumaAppBar** - Glassmorphic app bar with gradient overlay
+- **NeumaBackground** / **NeumaBackgroundV2** - Gradient background containers
+- **NeumaEdgeToEdgeLayout** - Complete edge-to-edge display solution for Android
+- **NeumaPagePadding** - Consistent page padding wrapper
 - **MetaInfoRow** - Generic row for displaying metadata with icons
 
 ### Badges
 - **NavBadge** - Animated navigation badge with ripple effect
-- **neumaBadge** - Generic badge component for labels and tags
+- **NeumaBadge** - Generic badge component for labels and tags
 
 ### Buttons
 - **NeumaChip** - Action chip with icon + label (supports URIs)
@@ -22,10 +22,10 @@ A reusable Flutter UI component library featuring glassmorphic designs and moder
 - **StarRatingInput** - Interactive 5-star rating widget
 
 ### Loading
-- **neumaLoading** - Customizable Lottie animation loader
+- **NeumaLoading** - Customizable Lottie animation loader
 
 ### Feedback
-- **neumaDivider** - Styled divider with consistent theming
+- **NeumaDivider** - Styled divider with consistent theming
 
 ### Media
 - **ThumbnailFallback** - Placeholder for missing images
@@ -61,13 +61,13 @@ import 'package:neuma_kit/neuma_kit.dart';
 
 // Use in your app
 Scaffold(
-  appBar: neumaAppBar(
+  appBar: NeumaAppBar(
     title: Text('My App'),
   ),
-  body: neumaPagePadding(
+  body: NeumaPagePadding(
     child: Column(
       children: [
-        neumaBadge(label: 'New'),
+        NeumaBadge(label: 'New'),
         StarRatingInput(
           onRatingChanged: (rating) => print(rating),
         ),

@@ -6,8 +6,8 @@ import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 ///
 /// Drop-in replacement for [GlassAppBar] — accepts the same [title],
 /// [leading], and [actions] parameters.
-class neumaAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const neumaAppBar({
+class NeumaAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const NeumaAppBar({
     super.key,
     this.title,
     this.leading,

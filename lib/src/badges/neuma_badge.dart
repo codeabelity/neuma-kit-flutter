@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 ///
 /// Displays a small pill-shaped badge with customizable colors, border, and text.
 /// Useful for temporary indicators, status tags, or any small label.
-class neumaBadge extends StatelessWidget {
-  const neumaBadge({
+class NeumaBadge extends StatelessWidget {
+  const NeumaBadge({
     required this.label,
     this.backgroundColor,
     this.textColor,
@@ -27,9 +27,7 @@ class neumaBadge extends StatelessWidget {
   final FontWeight fontWeight;
 
   @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    
+  Widget build(BuildContext context) {      
     final effectiveBackgroundColor = backgroundColor ?? 
         Colors.amber.withValues(alpha: 0.15);
     final effectiveBorderColor = borderColor ?? 
