@@ -12,6 +12,7 @@ class NeumaAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.leading,
     this.actions,
+    this.hasBackground = false,
     this.centerTitle = true,
   });
 
@@ -19,6 +20,7 @@ class NeumaAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final List<Widget>? actions;
   final bool centerTitle;
+  final bool hasBackground;
 
   // Match GlassAppBar default height + status bar
   @override
@@ -33,22 +35,23 @@ class NeumaAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Stack(
       children: [
         // Gradient backdrop — translucent black fading to transparent
-        Positioned.fill(
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  surfaceColor,
-                  surfaceColor.withAlpha(200),
-                  surfaceColor.withAlpha(0),
-                ],
-                stops: const [0.0, 0.7, 1.0],
+        if (hasBackground)
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    surfaceColor,
+                    surfaceColor.withAlpha(200),
+                    surfaceColor.withAlpha(0),
+                  ],
+                  stops: const [0.0, 0.7, 1.0],
+                ),
               ),
             ),
           ),
-        ),
 
         // Bar content — transparent so gradient shows through
         SizedBox(
